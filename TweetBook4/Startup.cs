@@ -27,6 +27,7 @@ namespace TweetBook4
         public void ConfigureServices(IServiceCollection services)
         {
             services.installServiceInAssembly(Configuration);
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +54,7 @@ namespace TweetBook4
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthorization();
 
 
             app.UseEndpoints(endpoints =>
